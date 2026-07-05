@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>致我的小马宝宝｜专属告白</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(120deg, #ffe8ef, #fce4ec, #f8e8f0);
+            font-family: "微软雅黑", "苹方", sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        .love-card {
+            background: rgba(255,255,255,0.85);
+            border-radius: 30px;
+            box-shadow: 0 8px 30px rgba(220, 160, 180, 0.35);
+            max-width: 580px;
+            width: 100%;
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        h1 {
+            font-size: 32px;
+            color: #c75b7c;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        .sub-title {
+            font-size: 16px;
+            color: #d488a2;
+            margin-bottom: 30px;
+        }
+
+        .line-heart {
+            font-size: 24px;
+            color: #ff7b9c;
+            margin: 20px 0;
+        }
+
+        .love-text {
+            font-size: 17px;
+            color: #55444b;
+            line-height: 2;
+            margin-bottom: 25px;
+        }
+
+        .date-box {
+            margin: 35px 0;
+            padding: 15px;
+            border-top: 1px solid #f0d8e0;
+            border-bottom: 1px solid #f0d8e0;
+            color: #b06884;
+            font-size: 15px;
+        }
+
+        .sign {
+            margin-top: 30px;
+            font-size: 16px;
+            color: #997082;
+            letter-spacing: 2px;
+        }
+
+        /* 飘落爱心容器 */
+        .fall-heart {
+            position: fixed;
+            top: -50px;
+            color: #ff7b9c;
+            font-size: 20px;
+            pointer-events: none;
+            z-index: 1;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="love-card">
+        <h1>写给我的小马宝宝</h1>
+        <p class="sub-title">予我最偏爱、最珍贵的你</p>
+
+        <div class="line-heart">♥ ♥ ♥</div>
+
+        <p class="love-text">
+            何其有幸，人海万千，我偏偏遇见你。<br>
+            和你在一起的日子，所有平淡琐碎都变得温柔滚烫。<br>
+            我不贪恋世间万千繁华，只贪恋有你的朝朝暮暮。<br>
+            谢谢你出现在我的生命里，治愈我的所有不安与疲惫。<br>
+            往后岁岁年年，四季更替，朝夕往复，<br>
+            我的温柔、偏爱、耐心与坚定，永远只留给小马宝宝一人。
+        </p>
+
+        <div class="date-box">
+            始于心动 · 陷于温柔 · 忠于你
+        </div>
+
+        <p class="love-text">
+            我想和你，从新鲜感，走到归属感，再到满满的安全感。<br>
+            岁岁年年，万喜万般宜，万般皆是你。
+        </p>
+
+        <p class="sign">永远爱你的小朋友 ❤️</p>
+    </div>
+
+    <script>
+        // 生成飘落文字爱心（兼容性拉满，不会失效）
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('fall-heart');
+            heart.innerHTML = '♥';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 5 + 5 + 's';
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 10000);
+        }
+
+        setInterval(createHeart, 300);
+    </script>
+</body>
+</html>
